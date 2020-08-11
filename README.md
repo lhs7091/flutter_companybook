@@ -2,6 +2,10 @@
 
 My first Flutter project 
 
+  flutter : 1.20.0  
+  Tools : Dart 2.9.0  
+  firebase : 8.7.0  
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.
@@ -14,3 +18,11 @@ A few resources to get you started if this is your first Flutter project:
 For help getting started with Flutter, view our
 [online documentation](https://flutter.dev/docs), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
+
+
+## initial setting  
+  flutter channel beta  
+  flutter upgrade  
+  flutter run -d chrome  
+
+## firebase deploy
