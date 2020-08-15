@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "828783941336",
+    "firebase_url": "https://companybooktutorial.firebaseio.com",
+    "project_id": "companybooktutorial",
+    "storage_bucket": "companybooktutorial.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:828783941336:android:32afcbd317e7d384f869ad",
+        "android_client_info": {
+          "package_name": "com.company.workspace"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "828783941336-grj9ekd8u5svpo30611jn22h6dsnlmna.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.company.workspace",
+            "certificate_hash": "95ba11371be7263cf0c2173fbd7eb4dfe9039fe1"
+          }
+        },
+        {
+          "client_id": "828783941336-nd4gt1v48fd8u7il7c8q2lap7ifq0dbu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBb2kJnDocwwWCPk3crFO8SInGIYH8-T9M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "828783941336-nd4gt1v48fd8u7il7c8q2lap7ifq0dbu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

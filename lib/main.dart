@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_companybook/screens/login_screen.dart';
 
 import 'config/palette.dart';
 import 'screens/screens.dart';
@@ -17,10 +18,10 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
-        textTheme: Theme.of(context).textTheme.apply(fontFamily: 'WhiteCat'),
+        textTheme: Theme.of(context).textTheme.apply(fontFamily: 'WhiteCat', fontSizeFactor: 1.2),
         scaffoldBackgroundColor: Palette.scaffold,
       ),
-      home: HomeScreen(),
+      home: LoginScreen(),//HomeScreen(),
     );
   }
 }
