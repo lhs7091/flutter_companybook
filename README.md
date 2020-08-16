@@ -24,6 +24,26 @@ samples, guidance on mobile development, and a full API reference.
     flutter upgarde  
     flutter run -d chrome  
 
+
+ ## Google Authentication
+    applicationId "my project name"(for example, com.XXXX.XXXXX)
+    cd <project path>/android/
+    gradlew signingReport
+    check SHA1, SHA-256 hashcode
+    In Firebase project-> Project Settings -> SHA certificate fingerprints -> add SHA1, SHA-256
+    Download google-services.json
+    paste <project path>/android/app
+    cd <project path>
+    flutter pub get
+    
+    console.developers.google.com
+    select a project -> application list check
+    
+    console.firebase.google.com
+    Authentication -> Sign-in method -> Google -> Enable, input email -> save
+    
+
+
 ## firebase deploy
 
 
