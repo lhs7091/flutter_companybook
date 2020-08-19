@@ -2,6 +2,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_companybook/config/constants.dart';
+import 'package:flutter_companybook/screens/screens.dart';
 
 class CreatePostContainer extends StatelessWidget {
   final FirebaseUser currentUser = Constants.firebaseUser;
@@ -18,11 +19,13 @@ class CreatePostContainer extends StatelessWidget {
           Row(
             children: [
               GestureDetector(
-                onTap: ()=>print(Constants.preferences.getString("userId")),
+                onTap: (){
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => Settings()));
+                },
                 child: CircleAvatar(
                   radius: 20.0,
                   backgroundColor: Colors.grey[200],
-                  backgroundImage: CachedNetworkImageProvider(currentUser.photoUrl),
+                  backgroundImage: CachedNetworkImageProvider(Constants.preferences.getString(Constants.PHOTOURL)),
                 ),
               ),
               const SizedBox(width: 8.0,),
@@ -54,7 +57,7 @@ class CreatePostContainer extends StatelessWidget {
                 FlatButton.icon(
                     onPressed: ()=>print("Video Call"),
                     icon: const Icon(Icons.video_call, color: Colors.green),
-                    label: Text('Video Call')
+                    label: Text('Video Call'),
                 ),
                 const VerticalDivider(width: 8.0,),
                 FlatButton.icon(

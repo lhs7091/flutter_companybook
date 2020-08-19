@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
-        textTheme: Theme.of(context).textTheme.apply(fontFamily: 'WhiteCat', fontSizeFactor: 1.2),
+        textTheme: Theme.of(context).textTheme.apply(fontFamily: 'WhiteCat',),
         scaffoldBackgroundColor: Palette.scaffold,
       ),
       home: LoginScreen(),//HomeScreen(),

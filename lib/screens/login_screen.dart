@@ -120,7 +120,7 @@ class _LoginScreenState extends State<LoginScreen> {
       // Save Data to firestore if new user
       if(documentSnapshots.length == 0){
         Firestore.instance.collection("users").document(firebaseUser.uid).setData({
-          "username" : firebaseUser.displayName,
+          "userName" : firebaseUser.displayName,
           "photoUrl" : firebaseUser.photoUrl,
           "userId" : firebaseUser.uid,
           "aboutMe" : "i am using Company workspace",
@@ -134,7 +134,7 @@ class _LoginScreenState extends State<LoginScreen> {
         //Write data to Local
         currentUser = firebaseUser;
         await preferences.setString("userId", currentUser.uid);
-        await preferences.setString("username", currentUser.displayName);
+        await preferences.setString("userName", currentUser.displayName);
         await preferences.setString("photoUrl", currentUser.photoUrl);
         await preferences.setString("aboutMe", Constants.ABOUT_ME_INIT);
         await preferences.setString("chattingwith", null);
@@ -144,7 +144,7 @@ class _LoginScreenState extends State<LoginScreen> {
         //Write data to Local
         currentUser = firebaseUser;
         await preferences.setString("userId", documentSnapshots[0]["id"]);
-        await preferences.setString("username", documentSnapshots[0]["username"]);
+        await preferences.setString("userName", documentSnapshots[0]["userName"]);
         await preferences.setString("photoUrl", documentSnapshots[0]["photoUrl"]);
         await preferences.setString("aboutMe", documentSnapshots[0]["aboutMe"]);
         await preferences.setString("chttingwith", documentSnapshots[0]["chattingwith"]);

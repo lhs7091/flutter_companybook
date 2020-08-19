@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_companybook/main.dart';
+import 'package:flutter_companybook/model/online_users.dart';
 import 'package:flutter_companybook/service/services.dart';
 import 'package:flutter_companybook/widgets/widgets.dart';
 import 'package:google_sign_in/google_sign_in.dart';
@@ -15,8 +16,7 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-
-
+  List<OnlineUser> onlineUsers;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -57,6 +57,12 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
           SliverToBoxAdapter(
             child: CreatePostContainer(),
+          ),
+          SliverPadding(
+            padding: const EdgeInsets.fromLTRB(0.0, 10.0, 0.0, 5.0),
+            sliver: SliverToBoxAdapter(
+              child: Rooms(onlineUsers),
+            ),
           ),
 
         ],
