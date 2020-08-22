@@ -11,7 +11,7 @@ class Constants{
 
   static final String ABOUT_ME_INIT = "I am using workspace";
 
-  static final String USERNAME = "username";
+  static final String USERNAME = "userName";
   static final String PHOTOURL = "photoUrl";
   static final String USERID = "userId";
   static final String ABOUTME = "aboutMe";

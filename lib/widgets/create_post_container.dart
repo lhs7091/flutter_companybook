@@ -51,15 +51,15 @@ class CreatePostContainer extends StatelessWidget {
                 FlatButton.icon(
                     onPressed: ()=>print("Chat Room"),
                     icon: const Icon(Icons.chat, color: Colors.red),
-                    label: Text('Chat Room')
+                    label: Text('ChatRoom')
                 ),
-                const VerticalDivider(width: 8.0,),
+                const VerticalDivider(width: 4.0,),
                 FlatButton.icon(
                     onPressed: ()=>print("Video Call"),
                     icon: const Icon(Icons.video_call, color: Colors.green),
-                    label: Text('Video Call'),
+                    label: Text('VideoCall'),
                 ),
-                const VerticalDivider(width: 8.0,),
+                const VerticalDivider(width: 4.0,),
                 FlatButton.icon(
                     onPressed: ()=>print("Photo"),
                     icon: const Icon(Icons.photo, color: Colors.purple),

@@ -2,7 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_companybook/main.dart';
 import 'package:flutter_companybook/model/online_users.dart';
-import 'package:flutter_companybook/service/services.dart';
+import 'package:flutter_companybook/screens/screens.dart';
 import 'package:flutter_companybook/widgets/widgets.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:flutter_companybook/config/constants.dart';
