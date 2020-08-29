@@ -17,7 +17,7 @@ class Constants{
   static final String ABOUTME = "aboutMe";
   static final String CREATED = "created";
   static final String UPDATED = "updated";
-  static final String CHATTINGWITH = "chattingwith";
+  static final String CHATTINGWITH = "chattingWith";
   static final String EMAIL = "email";
   static final String AUTHORITY = "authority";
 

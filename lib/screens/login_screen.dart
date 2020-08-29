@@ -137,7 +137,7 @@ class _LoginScreenState extends State<LoginScreen> {
         await preferences.setString("userName", currentUser.displayName);
         await preferences.setString("photoUrl", currentUser.photoUrl);
         await preferences.setString("aboutMe", Constants.ABOUT_ME_INIT);
-        await preferences.setString("chattingwith", null);
+        await preferences.setString("chattingWith", null);
         await preferences.setString("email", currentUser.email);
         await preferences.setString("authority", Constants.AUTHORITY_GENERAL);
       }else{
@@ -147,7 +147,7 @@ class _LoginScreenState extends State<LoginScreen> {
         await preferences.setString("userName", documentSnapshots[0]["userName"]);
         await preferences.setString("photoUrl", documentSnapshots[0]["photoUrl"]);
         await preferences.setString("aboutMe", documentSnapshots[0]["aboutMe"]);
-        await preferences.setString("chttingwith", documentSnapshots[0]["chattingwith"]);
+        await preferences.setString("chttingWith", documentSnapshots[0]["chattingWith"]);
         await preferences.setString("email", documentSnapshots[0]["email"]);
         await preferences.setString("authority", documentSnapshots[0]["authority"]);
 
