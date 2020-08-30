@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_companybook/main.dart';
@@ -17,6 +18,19 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   List<OnlineUser> onlineUsers;
+  String userId;
+
+  @override
+  void initState() {
+    super.initState();
+    userId = Constants.preferences.getString(Constants.USERID);
+    readChatUsers();
+  }
+
+  readChatUsers(){
+
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -73,8 +87,11 @@ class _HomeScreenState extends State<HomeScreen> {
   final GoogleSignIn googleSignIn = GoogleSignIn();
   Future<Null> logoutUser() async{
     await FirebaseAuth.instance.signOut();
-    await googleSignIn.disconnect();
-    await googleSignIn.signOut();
+    if(Constants.preferences.getString("googleUser") == "1"){
+      await googleSignIn.disconnect();
+      await googleSignIn.signOut();
+    }
+
     Constants.preferences = null;
 
     Navigator.of(context).pushAndRemoveUntil(MaterialPageRoute(builder: (context)=>MyApp()), (Route<dynamic> route) => false);

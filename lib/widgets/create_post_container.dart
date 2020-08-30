@@ -5,8 +5,7 @@ import 'package:flutter_companybook/config/constants.dart';
 import 'package:flutter_companybook/screens/screens.dart';
 
 class CreatePostContainer extends StatelessWidget {
-  final FirebaseUser currentUser = Constants.firebaseUser;
-
+  final User currentUser = Constants.firebaseUser;
 
   @override
   Widget build(BuildContext context) {
@@ -20,12 +19,13 @@ class CreatePostContainer extends StatelessWidget {
             children: [
               GestureDetector(
                 onTap: (){
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => Settings()));
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => ProfileSettings()));
                 },
                 child: CircleAvatar(
                   radius: 20.0,
                   backgroundColor: Colors.grey[200],
                   backgroundImage: CachedNetworkImageProvider(Constants.preferences.getString(Constants.PHOTOURL)),
+                  //backgroundImage: CachedNetworkImageProvider("https://firebasestorage.googleapis.com/v0/b/companybooktutorial.appspot.com/o/default.png?alt=media&token=9c189e0c-4be1-4b6b-aa13-b91834f430fc"),
                 ),
               ),
               const SizedBox(width: 8.0,),

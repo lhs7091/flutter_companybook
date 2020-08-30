@@ -25,7 +25,7 @@ class _SearchUserState extends State<SearchUser> {
         IconButton(
             icon: Icon(Icons.settings, size: 30.0, color: Colors.white,),
             onPressed: (){
-              Navigator.push(context, MaterialPageRoute(builder: (context) => Settings()));
+              Navigator.push(context, MaterialPageRoute(builder: (context) => ProfileSettings()));
             }
         )
       ],
@@ -106,10 +106,10 @@ class _SearchUserState extends State<SearchUser> {
           return circularProgress();
         }
         List<UserResult> searchUserResult = [];
-        dataSnapshot.data.documents.forEach((documnet){
-          User eachUser = User.fromDocument(documnet);
+        dataSnapshot.data.documents.forEach((document){
+          UserModel eachUser = UserModel.fromDocument(document);
           UserResult userResult = UserResult(eachUser);
-          if(currentUserId != documnet[Constants.USERID]){
+          if(currentUserId != document.data()[Constants.USERID]){
             searchUserResult.add(userResult);
           }
         });
@@ -119,8 +119,8 @@ class _SearchUserState extends State<SearchUser> {
   }
 
   controlSearching(String username){
-    Future<QuerySnapshot> allFoundUsers = Firestore.instance.collection("users")
-        .where("userName", isGreaterThanOrEqualTo: username).getDocuments();
+    Future<QuerySnapshot> allFoundUsers = FirebaseFirestore.instance.collection("users")
+        .where("userName", isGreaterThanOrEqualTo: username).get();
     setState(() {
       futureSearchResults = allFoundUsers;
     });
@@ -134,7 +134,7 @@ class _SearchUserState extends State<SearchUser> {
 
 
 class UserResult extends StatelessWidget {
-  final User eachUser;
+  final UserModel eachUser;
   UserResult(this.eachUser);
   @override
   Widget build(BuildContext context) {

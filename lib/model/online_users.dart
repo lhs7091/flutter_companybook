@@ -11,6 +11,7 @@ class OnlineUser{
     this.online,
     this.updated
   });
+/*
 
   factory OnlineUser.fromDocument(DocumentSnapshot doc){
     return OnlineUser(
@@ -19,6 +20,7 @@ class OnlineUser{
         updated: doc['updated']
     );
   }
+*/
 
 
 

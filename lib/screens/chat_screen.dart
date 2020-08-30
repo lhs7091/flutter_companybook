@@ -325,14 +325,14 @@ class _ChatScreenState extends State<ChatScreen> {
     );
   }
   bool isLastMsgLeft(int index){
-    if((index>0 && listmessage !=null && listmessage[index-1]["idFrom"]==id) || index==0){
+    if((index>0 && listmessage !=null && listmessage[index-1].data()["idFrom"]==id) || index==0){
       return true;
     }
     return false;
   }
 
   bool isLastMsgRight(int index){
-    if((index>0 && listmessage !=null && listmessage[index-1]["idFrom"]!=id) || index==0){
+    if((index>0 && listmessage !=null && listmessage[index-1].data()["idFrom"]==id) || index==0){
       return true;
     }
     return false;
@@ -340,14 +340,14 @@ class _ChatScreenState extends State<ChatScreen> {
 
   Widget createItem(int index, DocumentSnapshot document){
     // My messages - Right Side
-    if(document["idFrom"] == id){
+    if(document.get("idFrom") == id){
       return Row(
         children: [
-          document["type"] == 0
+          document.get("type") == 0
               //Text Msg
               ? Container(
                 child: Text(
-                  document["content"],
+                  document.get("content"),
                   style: TextStyle(color: Colors.white, fontWeight: FontWeight.w500),
                 ),
                 padding: EdgeInsets.fromLTRB(15.0, 10.0, 15.0, 10.0),
@@ -356,7 +356,7 @@ class _ChatScreenState extends State<ChatScreen> {
                 margin: EdgeInsets.only(bottom: isLastMsgRight(index) ? 20.0 : 10.0, right: 10.0),
               )
               //Image msg
-              : document["type"] == 1
+              : document.get("type") == 1
               ? Container(
                 child: FlatButton(
                   child: Material(
@@ -378,7 +378,7 @@ class _ChatScreenState extends State<ChatScreen> {
                         borderRadius: BorderRadius.all(Radius.circular(8.0)),
                         clipBehavior: Clip.hardEdge,
                       ),
-                      imageUrl: document["content"],
+                      imageUrl: document.get("content"),
                       width: 200.0,
                       height: 200.0,
                       fit: BoxFit.cover,
@@ -388,7 +388,7 @@ class _ChatScreenState extends State<ChatScreen> {
                   ),
                   onPressed: (){
                     Navigator.push(context, MaterialPageRoute(
-                      builder: (context)=>FullPhoto(url: document["content"]),
+                      builder: (context)=>FullPhoto(url: document.get("content")),
                     ));
                   },
                 ),
@@ -397,7 +397,7 @@ class _ChatScreenState extends State<ChatScreen> {
               //emoji msg
               : Container(
                 child: Image.asset(
-                  "assets/images/${document['content']}.gif",
+                  "assets/images/${document.get('content')}.gif",
                   width: 100.0,
                   height: 100.0,
                   fit:BoxFit.cover,
@@ -439,10 +439,10 @@ class _ChatScreenState extends State<ChatScreen> {
                     width: 35.0,
                     ),
 
-                document["type"] == 0
+                document.get("type") == 0
                     ? Container(
                   child: Text(
-                    document["content"],
+                    document.get("content"),
                     style: TextStyle(color: Colors.white, fontWeight: FontWeight.w500),
                   ),
                   padding: EdgeInsets.fromLTRB(15.0, 10.0, 15.0, 10.0),
@@ -451,7 +451,7 @@ class _ChatScreenState extends State<ChatScreen> {
                   margin: EdgeInsets.only(left: 10.0),
                 )
                 //Image msg
-                    : document["type"] == 1
+                    : document.get("type") == 1
                     ? Container(
                   child: FlatButton(
                     child: Material(
@@ -473,7 +473,7 @@ class _ChatScreenState extends State<ChatScreen> {
                           borderRadius: BorderRadius.all(Radius.circular(8.0)),
                           clipBehavior: Clip.hardEdge,
                         ),
-                        imageUrl: document["content"],
+                        imageUrl: document.get("content"),
                         width: 200.0,
                         height: 200.0,
                         fit: BoxFit.cover,
@@ -483,7 +483,7 @@ class _ChatScreenState extends State<ChatScreen> {
                     ),
                     onPressed: (){
                       Navigator.push(context, MaterialPageRoute(
-                        builder: (context)=>FullPhoto(url: document["content"]),
+                        builder: (context)=>FullPhoto(url: document.get("content")),
                       ));
                     },
                   ),
@@ -492,7 +492,7 @@ class _ChatScreenState extends State<ChatScreen> {
                 //emoji msg
                     : Container(
                   child: Image.asset(
-                    "assets/images/${document['content']}.gif",
+                    "assets/images/${document.get('content')}.gif",
                     width: 100.0,
                     height: 100.0,
                     fit:BoxFit.cover,
@@ -506,7 +506,7 @@ class _ChatScreenState extends State<ChatScreen> {
             isLastMsgLeft(index)
                 ? Container(
                     child: Text(
-                      DateFormat("dd MMM, yyyy - hh:mm").format(DateTime.fromMillisecondsSinceEpoch(int.parse(document["timestamp"]))),
+                      DateFormat("dd MMM, yyyy - hh:mm").format(DateTime.fromMillisecondsSinceEpoch(int.parse(document.get("timestamp")))),
                       style: TextStyle(color:Colors.grey, fontSize: 12.0, fontStyle: FontStyle.italic),
                     ),
                     margin: EdgeInsets.only(left: 50.0, top: 50.0, bottom: 5.0),

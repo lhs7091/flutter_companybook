@@ -13,7 +13,7 @@ import 'package:image_picker/image_picker.dart';
 
 import '../main.dart';
 
-class Settings extends StatelessWidget {
+class ProfileSettings extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
